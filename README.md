@@ -414,15 +414,3 @@ $updateProduct = $client->setSandboxProduct($productId, array('surge_multiplier'
 $ ./vendor/bin/phpunit
 ```
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Credits
-
-- [Steven Maguire]
-- [All Contributors]
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
