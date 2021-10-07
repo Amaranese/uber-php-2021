@@ -1,15 +1,11 @@
 # Uber PHP Client
 
-[![Latest Version](https://img.shields.io/github/release/stevenmaguire/uber-php.svg?style=flat-square)](https://github.com/stevenmaguire/uber-php/releases)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Build Status](https://img.shields.io/travis/stevenmaguire/uber-php/master.svg?style=flat-square&1)](https://travis-ci.org/stevenmaguire/uber-php)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/stevenmaguire/uber-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/stevenmaguire/uber-php/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/stevenmaguire/uber-php.svg?style=flat-square)](https://scrutinizer-ci.com/g/stevenmaguire/uber-php)
-[![Total Downloads](https://img.shields.io/packagist/dt/stevenmaguire/uber-php.svg?style=flat-square)](https://packagist.org/packages/stevenmaguire/uber-php)
+
+
 
 A PHP client for authenticating with Uber using OAuth 2.0 and consuming the API.
 
-*This package is intended to be used for communicating with the Uber API after you've secured an access token from your users. To authenticate users and retrieve access tokens, use [stevenmaguire/oauth2-uber](https://github.com/stevenmaguire/oauth2-uber).*
+*This package is intended to be used for communicating with the Uber API after you've secured an access token from your users. To authenticate users and retrieve access tokens.*
 
 ## Install
 
@@ -34,7 +30,7 @@ $client = new Stevenmaguire\Uber\Client(array(
     'locale'       => 'en_US', // optional, default 'en_US'
 ));
 ```
-*Please review the [Sandbox](https://developer.uber.com/docs/riders/guides/sandbox) documentation on how to develop and test against these endpoints without making real-world Requests and being charged.*
+*Please review the documentation on how to develop and test against these endpoints without making real-world Requests and being charged.*
 
 ### Get Products
 
@@ -46,7 +42,7 @@ $products = $client->getProducts(array(
     'longitude' => '-87.62730337'
 ));
 ```
-[https://developer.uber.com/docs/riders/references/api/v1.2/products-get](https://developer.uber.com/docs/riders/references/api/v1.2/products-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/products-get]
 
 #### By Id:
 
@@ -54,7 +50,7 @@ $products = $client->getProducts(array(
 $product = $client->getProduct($productId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/products-product_id-get](https://developer.uber.com/docs/riders/references/api/v1.2/products-product_id-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/products-product_id-get]
 
 ### Get Price Estimates
 
@@ -67,7 +63,7 @@ $estimates = $client->getPriceEstimates(array(
 ));
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/estimates-price-get](https://developer.uber.com/docs/riders/references/api/v1.2/estimates-price-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/estimates-price-get]
 
 ### Get Time Estimates
 
@@ -78,7 +74,7 @@ $estimates = $client->getTimeEstimates(array(
 ));
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/estimates-time-get](https://developer.uber.com/docs/riders/references/api/v1.2/estimates-time-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/estimates-time-get]
 
 ### Get Promotions
 
@@ -91,7 +87,7 @@ $promotions = $client->getPromotions(array(
 ));
 ```
 
-[https://developer.uber.com/docs/riders/ride-promotions/introduction](https://developer.uber.com/docs/riders/ride-promotions/introduction)
+[https://developer.uber.com/docs/riders/ride-promotions/introduction]
 
 ### Get User Activity
 
@@ -105,7 +101,7 @@ $history = $client->getHistory(array(
 ));
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/history-get](https://developer.uber.com/docs/riders/references/api/v1.2/history-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/history-get]
 
 ### Get User Profile
 
@@ -113,7 +109,7 @@ $history = $client->getHistory(array(
 $profile = $client->getProfile();
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/me-get](https://developer.uber.com/docs/riders/references/api/v1.2/me-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/me-get]
 
 ### Update User Profile
 
@@ -122,7 +118,7 @@ $attributes = array('applied_promotion_codes' => 'PROMO_CODE');
 $profileResponse = $client->setProfile($attributes);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/me-patch](https://developer.uber.com/docs/riders/references/api/v1.2/me-patch)
+[https://developer.uber.com/docs/riders/references/api/v1.2/me-patch]
 
 ### Get Payment Methods
 
@@ -130,7 +126,7 @@ $profileResponse = $client->setProfile($attributes);
 $paymentMethods = $client->getPaymentMethods();
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/payment-methods-get](https://developer.uber.com/docs/riders/references/api/v1.2/payment-methods-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/payment-methods-get]
 
 ### Get Place
 
@@ -139,7 +135,7 @@ $placeId = 'home';
 $place = $client->getPlace($placeId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/places-place_id-get](https://developer.uber.com/docs/riders/references/api/v1.2/places-place_id-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/places-place_id-get]
 
 ### Update a Place
 
@@ -149,7 +145,7 @@ $attributes = array('address' => '685 Market St, San Francisco, CA 94103, USA');
 $place = $client->setPlace($placeId, $attributes);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/places-place_id-put](https://developer.uber.com/docs/riders/references/api/v1.2/places-place_id-put)
+[https://developer.uber.com/docs/riders/references/api/v1.2/places-place_id-put]
 
 ### Request A Ride
 
@@ -178,7 +174,7 @@ Upfront fares means the total fare is known before the ride is taken.
 2. Use the ride request estimate endpoint `POST /requests/estimate` with the `product_id` to get a `fare_id`. The `fare_id` can be used to lock down an upfront fare and arrival time for a trip. The `fare_id` expires after two minutes. If the `fare_id` is expired or not valid, we return a 422 error.
 3. Request the ride using the ride request endpoint `POST /requests` with the `fare_id` returned in the previous step.
 
-[https://developer.uber.com/docs/riders/ride-requests/tutorials/api/best-practices#upfront-fares](https://developer.uber.com/docs/riders/ride-requests/tutorials/api/best-practices#upfront-fares)
+[https://developer.uber.com/docs/riders/ride-requests/tutorials/api/best-practices#upfront-fares]
 
 #### Surge Confirmation Flow
 
@@ -199,7 +195,7 @@ try {
 }
 ```
 
-[https://developer.uber.com/docs/riders/ride-requests/tutorials/api/best-practices#handling-surge-pricing](https://developer.uber.com/docs/riders/ride-requests/tutorials/api/best-practices#handling-surge-pricing)
+[https://developer.uber.com/docs/riders/ride-requests/tutorials/api/best-practices#handling-surge-pricing]
 
 ### Get Current Ride Details
 
@@ -207,7 +203,7 @@ try {
 $request = $client->getCurrentRequest();
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-get](https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-get]
 
 ### Get Ride Details
 
@@ -215,7 +211,7 @@ $request = $client->getCurrentRequest();
 $request = $client->getRequest($requestId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-get](https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-get]
 
 ### Update Current Ride Details
 
@@ -231,7 +227,7 @@ $requestDetails = array(
 $updateRequest = $client->setCurrentRequest($requestDetails);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-patch](https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-patch)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-patch]
 
 ### Update Ride Details
 
@@ -248,7 +244,7 @@ $requestDetails = array(
 $updateRequest = $client->setRequest($requestId, $requestDetails);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-patch](https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-patch)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-patch]
 
 ### Get Ride Estimate
 
@@ -262,7 +258,7 @@ $requestEstimate = $client->getRequestEstimate(array(
 ));
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-estimate-post](https://developer.uber.com/docs/riders/references/api/v1.2/requests-estimate-post)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-estimate-post]
 
 ### Get Ride Map
 
@@ -270,7 +266,7 @@ $requestEstimate = $client->getRequestEstimate(array(
 $map = $client->getRequestMap($requestId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-map-get](https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-map-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-map-get]
 
 ### Get Ride Receipt
 
@@ -278,7 +274,7 @@ $map = $client->getRequestMap($requestId);
 $receipt = $client->getRequestReceipt($requestId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-receipt-get](https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-receipt-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-receipt-get]
 
 ### Cancel Current Ride
 
@@ -286,7 +282,7 @@ $receipt = $client->getRequestReceipt($requestId);
 $request = $client->cancelCurrentRequest();
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-delete](https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-delete)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-current-delete]
 
 ### Cancel Ride
 
@@ -294,7 +290,7 @@ $request = $client->cancelCurrentRequest();
 $request = $client->cancelRequest($requestId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-delete](https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-delete)
+[https://developer.uber.com/docs/riders/references/api/v1.2/requests-request_id-delete]
 
 ### Create Reminder
 
@@ -318,7 +314,7 @@ $attributes = array(
 $reminder = $client->createReminder($attributes);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-post](https://developer.uber.com/docs/riders/references/api/v1.2/reminders-post)
+[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-post]
 
 ### Get Reminder
 
@@ -327,7 +323,7 @@ $reminderId = '4bfc6c57-98c0-424f-a72e-c1e2a1d49939';
 $reminder = $client->getReminder($reminderId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-get](https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-get)
+[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-get]
 
 ### Update Reminder
 
@@ -352,7 +348,7 @@ $attributes = array(
 $reminder = $client->setReminder($reminderId, $attributes);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-patch](https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-patch)
+[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-patch]
 
 ### Cancel Reminder
 
@@ -361,7 +357,7 @@ $reminderId = '4bfc6c57-98c0-424f-a72e-c1e2a1d49939';
 $reminder = $client->cancelReminder($reminderId);
 ```
 
-[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-delete](https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-delete)
+[https://developer.uber.com/docs/riders/references/api/v1.2/reminders-reminder_id-delete]
 
 ### Get Driver Profile
 
@@ -369,7 +365,7 @@ $reminder = $client->cancelReminder($reminderId);
 $profile = $client->getDriverProfile();
 ```
 
-[https://developer.uber.com/docs/drivers/references/api/v1/partners-me-get](https://developer.uber.com/docs/drivers/references/api/v1/partners-me-get)
+[https://developer.uber.com/docs/drivers/references/api/v1/partners-me-get]
 
 ### Get Driver Payments
 
@@ -380,7 +376,7 @@ $profile = $client->getDriverPayments(array(
 ));
 ```
 
-[https://developer.uber.com/docs/drivers/references/api/v1/partners-payments-get](https://developer.uber.com/docs/drivers/references/api/v1/partners-payments-get)
+[https://developer.uber.com/docs/drivers/references/api/v1/partners-payments-get]
 
 ### Get Driver Trips
 
@@ -391,7 +387,7 @@ $profile = $client->getDriverTrips(array(
 ));
 ```
 
-[https://developer.uber.com/docs/drivers/references/api/v1/partners-trips-get](https://developer.uber.com/docs/drivers/references/api/v1/partners-trips-get)
+[https://developer.uber.com/docs/drivers/references/api/v1/partners-trips-get]
 
 ### Rate Limiting
 
@@ -412,7 +408,7 @@ $rateLimit->getReset();        // Timestamp in UTC time when the next period wil
 ```
 These values will update after each request. `getRateLimit` will return null after the client is created and before the first successful request.
 
-[https://developer.uber.com/v1/api-reference/#rate-limiting](https://developer.uber.com/v1/api-reference/#rate-limiting)
+[https://developer.uber.com/v1/api-reference/#rate-limiting]
 
 ### Using the Sandbox
 
@@ -431,7 +427,7 @@ $request = $client->requestRide(array(
 
 $updateRequest = $client->setSandboxRequest($request->request_id, array('status' => 'accepted'));
 ```
-[https://developer.uber.com/v1/sandbox/#request](https://developer.uber.com/v1/sandbox/#request)
+[https://developer.uber.com/v1/sandbox/#request]
 
 Simulate the possible responses the Request endpoint will return when requesting a particular product, such as surge pricing, against the Sandbox.
 
@@ -441,7 +437,7 @@ $product = $client->getProduct($productId);
 $updateProduct = $client->setSandboxProduct($productId, array('surge_multiplier' => 2.2, 'drivers_available' => false));
 ```
 
-[https://developer.uber.com/v1/sandbox/#product-types](https://developer.uber.com/v1/sandbox/#product-types)
+[https://developer.uber.com/v1/sandbox/#product-types]
 
 ## Testing
 
@@ -455,8 +451,8 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Credits
 
-- [Steven Maguire](https://github.com/stevenmaguire)
-- [All Contributors](https://github.com/stevenmaguire/uber-php/contributors)
+- [Steven Maguire]
+- [All Contributors]
 
 ## License
 
