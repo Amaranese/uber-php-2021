@@ -3,11 +3,7 @@
 
 
 
-A PHP client for authenticating with Uber using OAuth 2.0 and consuming the API.
 
-*This package is intended to be used for communicating with the Uber API after you've secured an access token from your users. To authenticate users and retrieve access tokens.*
-
-## Install
 
 Via Composer
 
@@ -15,7 +11,7 @@ Via Composer
 $ composer require stevenmaguire/uber-php
 ```
 
-> Note that the required version of PHP is 5.5. If you want use library with PHP 5.4 you should use 1.2.0 version.
+
 
 ## Usage
 
@@ -30,7 +26,6 @@ $client = new Stevenmaguire\Uber\Client(array(
     'locale'       => 'en_US', // optional, default 'en_US'
 ));
 ```
-*Please review the documentation on how to develop and test against these endpoints without making real-world Requests and being charged.*
 
 ### Get Products
 
@@ -153,21 +148,13 @@ $request = $client->requestRide(array(
 
 #### Upfront Fares
 
-Upfront fares means the total fare is known before the ride is taken.
 
-- An end location is required
-- There is no surge confirmation flow
-- The user should specify a fare_id to confirm consent to the upfront fare
-- The user should specify the number of seats that are required for shared products (like UberPOOL)
 
-1. In the products endpoint `GET /products`, products will have the `upfront_fare_enabled` field set to `true`.
-2. Use the ride request estimate endpoint `POST /requests/estimate` with the `product_id` to get a `fare_id`. The `fare_id` can be used to lock down an upfront fare and arrival time for a trip. The `fare_id` expires after two minutes. If the `fare_id` is expired or not valid, we return a 422 error.
-3. Request the ride using the ride request endpoint `POST /requests` with the `fare_id` returned in the previous step.
+
 
 
 #### Surge Confirmation Flow
 
-If the ride request is using a product that has a surge multiplier, the API wrapper will throw an Exception and provide a response body that includes a surge confirmation ID.
 
 ```php
 try {
@@ -363,11 +350,7 @@ $profile = $client->getDriverTrips(array(
 
 ### Rate Limiting
 
-> This feature is only supported for `v1` version of the API.
 
-Rate limiting is implemented on the basis of a specific client's secret token. By default, 1,000 requests per hour can be made per secret token.
-
-When consuming the service with this package, your rate limit status will be made available within the client.
 
 ```php
 $product = $client->getProduct($productId);
@@ -378,14 +361,11 @@ $rateLimit->getLimit();        // Rate limit capacity per period
 $rateLimit->getRemaining();    // Requests remaining in current period
 $rateLimit->getReset();        // Timestamp in UTC time when the next period will begin
 ```
-These values will update after each request. `getRateLimit` will return null after the client is created and before the first successful request.
 
 
 ### Using the Sandbox
 
-Modify the status of an ongoing sandbox Request.
 
-> These methods will throw `Stevenmaguire\Uber\Exception` when invoked while the client is not in sandbox mode. The underlying API endpoints have no effect unless you are using the sandbox environment.
 
 ```php
 $request = $client->requestRide(array(
@@ -399,7 +379,6 @@ $request = $client->requestRide(array(
 $updateRequest = $client->setSandboxRequest($request->request_id, array('status' => 'accepted'));
 ```
 
-Simulate the possible responses the Request endpoint will return when requesting a particular product, such as surge pricing, against the Sandbox.
 
 ```php
 $product = $client->getProduct($productId);
